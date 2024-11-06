@@ -43,9 +43,6 @@
     }
   },
   "extra": {
-    "branch-alias": {
-        "dev-master": "1.7-dev"
-    },
     "laravel": {
       "providers": [
         "Lab404\\Impersonate\\ImpersonateServiceProvider"
