@@ -35,4 +35,17 @@ class SessionGuard extends BaseSessionGuard
 
         $this->loggedOut = true;
     }
+
+    /**
+     * Get a unique identifier for the auth session value.
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        $hash = config('auth.use-base-session-guard-hash', false)
+            ? sha1(parent::class)
+            : sha1(static::class);
+        return 'login_'.$this->name.'_'.$hash;
+    }
 }
